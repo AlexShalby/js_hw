@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание.
 
 Необходимо от пользователя получить число.
@@ -25,10 +27,17 @@
 
 Уточнение: пользователь всегда вводит корректное положительное число.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    const number = Number(prompt('Введите число:'))
+    const hundreds = (number % 1000 - number % 100) / 100
+    const dozens = (number % 100 - number % 10) / 10
+    const units = number % 10
+
+    alert(`В числе ${number} количество сотен: ${hundreds}, десятков: ${dozens}, единиц: ${units}`)
+
+  </script>
 </body>
+
 </html>
