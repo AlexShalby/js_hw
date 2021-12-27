@@ -28,10 +28,12 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
     "use strict";
 
     function declinationOfNumber(count, one, two, five) {
-      if ((count % 10) === 1)
-        return `${count} ${one}`;
+      if ((count % 100) >= 5 && (count % 100) <= 10)
+        return `${count} ${five}`;
       else if (((count % 10) === 2) || ((count % 10) === 3) || ((count % 10) === 4))
         return `${count} ${two}`;
+      else if ((count % 10) === 1)
+        return `${count} ${one}`;
       else
         return `${count} ${five}`;
     }
