@@ -23,21 +23,15 @@
   <script>
     "use strict";
 
-    const a = Number(promt('a='));
-    const b = Number(promt('b='));
+    const a = Number(prompt('a='));
+    const b = Number(prompt('b='));
 
-    switch (a, b) {
-      case (a > 0) && (b > 0):
-        alert(a - b);
-        break;
-      case (a < 0) && (b < 0):
-        alert(a * b);
-        break;
-      case ((a < 0) && (b > 0)) || ((a > 0) && (b < 0)):
-        alert(a + b);
-        break;
-
-    }
+    if ((a > 0) && (b > 0))
+      alert(a - b);
+    else if ((a < 0) && (b < 0))
+      alert(a * b);
+    else if (((a < 0) && (b > 0)) || ((a > 0) && (b < 0)))
+      alert(a + b);
   </script>
 </body>
 
