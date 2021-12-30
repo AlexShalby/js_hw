@@ -27,9 +27,7 @@ xxxxx
   <script>
     "use strict";
 
-    for (let i = 1, rock = 'x'; i < 21; i++) {
-      console.log(rock, i)
-      rock += 'x'
+    for (let rock = ''; rock.length < 20; console.log(rock += 'x', rock.length)) {
     };
   </script>
 </body>
