@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя
+метод forEach.
+-->
+  <script>
+    "use strict";
+
+    const products = [
+      {
+        id: 3,
+        price: 200,
+      },
+      {
+        id: 4,
+        price: 900,
+      },
+      {
+        id: 1,
+        price: 1000,
+      },
+    ];
+
+    function sales15(elem) {
+      const sale = 15;
+      elem.price *= (100 - sale) / 100;
+    };
+
+
+    function sales(arr, sale) {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].price *= (100 - sale) / 100;
+      };
+      return arr
+    };
+
+
+
+    sales(products, 15)
+    // products.forEach(sales15) // 2й вариант
+    // products.forEach(el => el.price *= 0.85) // 3й вариант
+    console.log(products)
+  </script>
+</body>
+
+</html>
