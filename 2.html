@@ -60,7 +60,18 @@
     PostES5.prototype.edit = function (text) {
       this.text = text;
       this.updatedAt = new Date();
+    };
+    function AttachedPostES5(author, text) {
+      PostES5.call(this, author, text);
+      this.highLighted = false;
     }
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this.updatedAt = new Date();
+    };
+
     class PostES6 {
       constructor(author, text) {
         this.author = author;
@@ -72,6 +83,29 @@
         this.updatedAt = new Date();
       }
     }
+
+
+
+    class AttachedPostES6 extends PostES6 {
+      highLighted = false;
+      makeTextHighlighted(value) {
+        this.highlighted = true;
+        this.updatedAt = new Date();
+      };
+    }
+
+    const attachedES5 = new AttachedPostES5('Сашка', 'Текст');
+    console.log(attachedES5);
+    attachedES5.makeTextHighlighted();
+    attachedES5.edit('Новый текст');
+    console.log(attachedES5);
+
+    const attachedPostES6 = new AttachedPostES6('Cс', 'Текст');
+    console.log(attachedPostES6);
+    attachedPostES6.makeTextHighlighted();
+    attachedPostES6.edit('Новый текст');
+    console.log(attachedPostES6);
+
   </script>
 </body>
 
